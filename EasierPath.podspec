@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasierPath'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'To make it easier to use UIBezierPath ⚡️'
 
 
