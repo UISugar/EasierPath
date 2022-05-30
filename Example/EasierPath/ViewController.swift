@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import EasierPath
 
 class ViewController: UIViewController {
-
+    
+    lazy var easierPath = EasierPath(view.center.x + 100, view.center.y)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        easierPath
+            .left(45)
+            .down(90)
+            .right(45)
+            .curve(.up(90),
+                   .quad(.rightUp(45,45)))
+        
+        view.layer.addSublayer(easierPath.makeLayer(3, .black, .green))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

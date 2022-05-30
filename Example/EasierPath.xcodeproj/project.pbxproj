@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B5F24328445E890032A30D /* EasierLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5F24228445E890032A30D /* EasierLayerTests.swift */; };
 		39A69F6F93CB52FA6DC1BE5E /* Pods_EasierPath_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71C93D0403B12ABDA8895B0 /* Pods_EasierPath_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* EasierPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* EasierPathTests.swift */; };
 		73BA63664EC004D2BCDF86FC /* Pods_EasierPath_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F28DE93A6E733E80840ECF /* Pods_EasierPath_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04B5F24228445E890032A30D /* EasierLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasierLayerTests.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EasierPath_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasierPath_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,15 +39,15 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* EasierPath_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasierPath_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		62A8A395908C5B9F9E7556A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* EasierPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasierPathTests.swift; sourceTree = "<group>"; };
+		62A8A395908C5B9F9E7556A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6736C1113BA385B683132FFD /* Pods-EasierPath_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasierPath_Tests.debug.xcconfig"; path = "Target Support Files/Pods-EasierPath_Tests/Pods-EasierPath_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6C59779AC2F4C93AE5D33387 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6C59779AC2F4C93AE5D33387 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		78F28DE93A6E733E80840ECF /* Pods_EasierPath_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasierPath_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855C1505B0C4790E88A1E916 /* Pods-EasierPath_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasierPath_Tests.release.xcconfig"; path = "Target Support Files/Pods-EasierPath_Tests/Pods-EasierPath_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9FE80D975CDCBC4315E26B59 /* Pods-EasierPath_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasierPath_Example.release.xcconfig"; path = "Target Support Files/Pods-EasierPath_Example/Pods-EasierPath_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A71C93D0403B12ABDA8895B0 /* Pods_EasierPath_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasierPath_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF4DAF01D5A40CF6A5F0165D /* EasierPath.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = EasierPath.podspec; path = ../EasierPath.podspec; sourceTree = "<group>"; };
+		EF4DAF01D5A40CF6A5F0165D /* EasierPath.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EasierPath.podspec; path = ../EasierPath.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FBDF5867C54D613D7E3B93F7 /* Pods-EasierPath_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasierPath_Example.debug.xcconfig"; path = "Target Support Files/Pods-EasierPath_Example/Pods-EasierPath_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +79,6 @@
 				6736C1113BA385B683132FFD /* Pods-EasierPath_Tests.debug.xcconfig */,
 				855C1505B0C4790E88A1E916 /* Pods-EasierPath_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,7 +128,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				04B5F24228445E890032A30D /* EasierLayerTests.swift */,
+				607FACEB1AFB9204008FA782 /* EasierPathTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -213,6 +215,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 2F54VR68GM;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -227,6 +230,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -340,7 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				04B5F24328445E890032A30D /* EasierLayerTests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* EasierPathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -478,6 +483,7 @@
 			baseConfigurationReference = FBDF5867C54D613D7E3B93F7 /* Pods-EasierPath_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2F54VR68GM;
 				INFOPLIST_FILE = EasierPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +499,7 @@
 			baseConfigurationReference = 9FE80D975CDCBC4315E26B59 /* Pods-EasierPath_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2F54VR68GM;
 				INFOPLIST_FILE = EasierPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
