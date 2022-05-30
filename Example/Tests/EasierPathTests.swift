@@ -65,14 +65,14 @@ class EasierPathTests: XCTestCase {
     
     func testEasierPath_WhenQuadCurveMove_ShouldChangeLastEndPointToQuadToPoint() {
         sut = EasierPath(0,0)
-        let quadCurveMove = sut.curve(.up(45), .quad(.rightUp(45, 45)))
+        let quadCurveMove = sut.curve(to:.up(45), .quad(.rightUp(45, 45)))
         XCTAssertEqual(quadCurveMove.lastEndPoint,CGPoint(x:0, y: -45))
     }
     
     func testEasierPath_WhenBezierCurveMove_ShouldChangeLastEndPointToQuadToPoint() {
         sut = EasierPath(0,0)
         
-        let bezierCurveMove = sut.curve(.up(45), .bezier(.leftUp(45,45),.rightUp(45, 45)))
+        let bezierCurveMove = sut.curve(to:.up(45), .bezier(.leftUp(45,45),.rightUp(45, 45)))
         XCTAssertEqual(bezierCurveMove.lastEndPoint,CGPoint(x:0, y: -45))
     }
     

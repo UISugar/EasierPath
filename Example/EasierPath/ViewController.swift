@@ -11,18 +11,31 @@ import EasierPath
 
 class ViewController: UIViewController {
     
-    lazy var easierPath = EasierPath(view.center.x + 100, view.center.y)
+    lazy var easierPath = EasierPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        easierPath
-            .left(45)
-            .down(90)
-            .right(45)
-            .curve(.up(90),
-                   .quad(.rightUp(45,45)))
         
-        view.layer.addSublayer(easierPath.makeLayer(3, .black, .green))
+        view.backgroundColor = .black
+        
+        drawEasierPath()
+        
+        view.layer.addSublayer(
+            easierPath.makeLayer(
+            lineWidth:3,
+            lineColor: .white,
+            fillColor:.systemPink)
+        )
+    }
+    
+    func drawEasierPath() {
+        easierPath
+            .start(100, 100)
+            .curve(to: .right(200), .bezier(.rightUp(75, 50), .rightDown(150, 50)))
+            .down(100)
+            .curve(to:.left(200),.quad(.leftDown(100,50)))
+            .up(100)
+            .end()
     }
 }
 

@@ -35,9 +35,9 @@ protocol EasierPathProtocol {
     
     func rightUp(_ rightLength:CGFloat,_ upLength:CGFloat) -> EasierPath
     
-    func curve(_ to:Direction,_ type:CurveType) -> EasierPath
+    func curve(to:Direction,_ type:CurveType) -> EasierPath
     
-    func makeLayer(_ lineWidth:CGFloat,_ lineColor:UIColor,_ fillColor:UIColor) -> CAShapeLayer
+    func makeLayer(lineWidth:CGFloat,lineColor:UIColor,fillColor:UIColor) -> CAShapeLayer
     
     func addLine(_ x:CGFloat,_ y:CGFloat) -> EasierPath
 }

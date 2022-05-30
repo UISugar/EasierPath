@@ -24,39 +24,59 @@ public class EasierPath:EasierPathProtocol {
         self.path.move(to: CGPoint(x: x, y: y))
     }
     
+    public init() {
+        self.path = UIBezierPath()
+        lastEndPoint = CGPoint()
+    }
+    
+    public func start(_ x:CGFloat, _ y:CGFloat) -> EasierPath {
+        self.path.move(to: CGPoint(x: x, y: y))
+        self.lastEndPoint = CGPoint(x: x, y: y)
+        return EasierPath(self.path, self.lastEndPoint)
+    }
+    
+    @discardableResult
     public func left(_ length:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x - length, lastEndPoint.y)
     }
     
+    @discardableResult
     public func right(_ length:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x + length, lastEndPoint.y)
     }
     
+    @discardableResult
     public func up(_ length:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x, lastEndPoint.y - length)
     }
     
+    @discardableResult
     public func down(_ length:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x, lastEndPoint.y + length)
     }
     
+    @discardableResult
     public func leftDown(_ leftLength:CGFloat,_ downLength:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x - leftLength, lastEndPoint.y + downLength)
     }
     
+    @discardableResult
     public func leftUp(_ leftLength:CGFloat,_ upLength:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x - leftLength, lastEndPoint.y - upLength)
     }
     
+    @discardableResult
     public func rightDown(_ rightLength:CGFloat,_ downLength:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x + rightLength, lastEndPoint.y + downLength)
     }
     
+    @discardableResult
     public func rightUp(_ rightLength:CGFloat,_ upLength:CGFloat) -> EasierPath {
         return addLine(lastEndPoint.x + rightLength, lastEndPoint.y - upLength)
     }
     
-    public func curve(_ to:Direction,_ type:CurveType) -> EasierPath {
+    @discardableResult
+    public func curve(to:Direction,_ type:CurveType) -> EasierPath {
         let start:CGPoint = lastEndPoint
         lastEndPoint = moveByDirection(lastEndPoint,to)
         switch type {
@@ -68,8 +88,11 @@ public class EasierPath:EasierPathProtocol {
         return EasierPath(self.path,lastEndPoint)
     }
     
+    public func end() {
+        self.path.close()
+    }
     
-    public func makeLayer(_ lineWidth:CGFloat,_ lineColor:UIColor,_ fillColor:UIColor) -> CAShapeLayer {
+    public func makeLayer(lineWidth:CGFloat,lineColor:UIColor,fillColor:UIColor) -> CAShapeLayer {
         let layer = EasierLayer()
         layer.layer.path = self.path.cgPath
         return layer.setStyle(lineWidth: lineWidth, lineColor: lineColor, fillColor: fillColor)
