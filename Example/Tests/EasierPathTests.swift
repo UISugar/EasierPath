@@ -95,5 +95,4 @@ class EasierPathTests: XCTestCase {
         let rightDownPoint = sut.moveByDirection(sut.lastEndPoint, .rightDown(45, 45))
         XCTAssertEqual(rightDownPoint,CGPoint(x:45, y:45))
     }
-
 }

@@ -15,8 +15,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        drawBeizerPath()
         drawEasierPath()
-        
+        drawEasierPathShape()
+    }
+    
+    func setupUI() {
+        view.backgroundColor = .black
+    }
+    
+    func drawBeizerPath() {
         let bezierPath:UIBezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 100, y: 100))
         bezierPath.addLine(to: CGPoint(x: 200, y: 100))
@@ -28,19 +36,14 @@ class ViewController: UIViewController {
         let caShapeLayer:CAShapeLayer = CAShapeLayer()
         caShapeLayer.path = bezierPath.cgPath
         caShapeLayer.strokeColor = UIColor.white.cgColor
-        caShapeLayer.fillColor = UIColor.systemPink.cgColor
+        caShapeLayer.fillColor = UIColor.systemBlue.cgColor
         caShapeLayer.lineWidth = 3
         
         view.layer.addSublayer(caShapeLayer)
-        
-    }
-    
-    func setupUI() {
-        view.backgroundColor = .black
     }
     
     func drawEasierPath() {
-        let easierPath = EasierPath(100,100)
+        let easierPath = EasierPath(100,300)
             .right(100)
             .curve(to: .down(200), .bezier(.rightDown(50,50), .leftDown(25,150)))
             .left(100)
@@ -48,6 +51,12 @@ class ViewController: UIViewController {
         
         let layer = easierPath.makeLayer(lineWidth:3,lineColor: .white,fillColor:.systemPink)
         
+        view.layer.addSublayer(layer)
+    }
+    
+    func drawEasierPathShape() {
+        let easierPath:EasierPath = EasierPath(.rhombus, CGRect(x: 100, y: 500, width: 100, height: 200))
+        let layer = easierPath.makeLayer(lineWidth:3,lineColor: .white,fillColor:.systemGreen)
         view.layer.addSublayer(layer)
     }
 }

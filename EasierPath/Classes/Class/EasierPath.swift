@@ -8,7 +8,7 @@
 import UIKit
 
 public class EasierPath:EasierPathProtocol {
-        
+
     public var lastEndPoint:CGPoint
     public var path:UIBezierPath
     internal var layer:CAShapeLayer = CAShapeLayer()
@@ -27,6 +27,11 @@ public class EasierPath:EasierPathProtocol {
     public init() {
         self.path = UIBezierPath()
         lastEndPoint = CGPoint()
+    }
+    
+    public init(_ shape:Shape,_ rect:CGRect) {
+        self.path = Self.drawByShape(shape, rect)
+        self.lastEndPoint = CGPoint(x: rect.maxX, y: rect.maxY)
     }
     
     public func start(_ x:CGFloat, _ y:CGFloat) -> EasierPath {
@@ -76,7 +81,7 @@ public class EasierPath:EasierPathProtocol {
     }
     
     @discardableResult
-    public func curve(to:Direction,_ type:CurveType) -> EasierPath {
+    public  func curve(to:Direction,_ type:CurveType) -> EasierPath {
         let start:CGPoint = lastEndPoint
         lastEndPoint = moveByDirection(lastEndPoint,to)
         switch type {
@@ -96,6 +101,36 @@ public class EasierPath:EasierPathProtocol {
         let layer = EasierLayer()
         layer.layer.path = self.path.cgPath
         return layer.setStyle(lineWidth: lineWidth, lineColor: lineColor, fillColor: fillColor)
+    }
+    
+    static internal func drawByShape(_ shape:Shape,_ rect:CGRect) -> UIBezierPath {
+        switch shape {
+        //if rect's height is not equal to rect's width, the circle's radius will be rect's width
+        case .circle:
+          return UIBezierPath(arcCenter: CGPoint(x: rect.midX, y:rect.midY), radius:rect.size.width/2, startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        case .oval:
+            return UIBezierPath(ovalIn: rect)
+        case .triangle:
+            let bezierPath:UIBezierPath = UIBezierPath()
+            bezierPath.move(to: CGPoint(x: rect.midX, y: rect.minY))
+            bezierPath.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+            bezierPath.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            bezierPath.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+            return bezierPath
+        case .rectangle:
+            return UIBezierPath(rect: rect)
+        //  //if rect's height is not equal to rect's width, the square's length will be rect's width
+        case .square:
+            return UIBezierPath(rect: CGRect(origin: rect.origin, size: CGSize(width: rect.width, height: rect.width)))
+        case .rhombus:
+            let bezierPath:UIBezierPath = UIBezierPath()
+            bezierPath.move(to: CGPoint(x: rect.midX, y: rect.minY))
+            bezierPath.addLine(to: CGPoint(x: rect.minX, y: rect.midY))
+            bezierPath.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+            bezierPath.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+            bezierPath.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+            return bezierPath
+        }
     }
     
     internal func moveByDirection(_ point:CGPoint,_ direction:Direction) -> CGPoint {
@@ -118,7 +153,6 @@ public class EasierPath:EasierPathProtocol {
             return CGPoint(x:point.x + righLength,y:point.y - upLength)
         }
     }
-    
     
     internal func addLine(_ x:CGFloat,_ y:CGFloat) -> EasierPath {
         lastEndPoint = CGPoint(x: x, y:y)

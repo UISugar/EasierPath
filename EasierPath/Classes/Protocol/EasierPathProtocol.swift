@@ -17,6 +17,8 @@ protocol EasierPathProtocol {
     
     //MARK: Functions
     
+    static func drawByShape(_ shape:Shape,_ rect:CGRect) -> UIBezierPath
+    
     func moveByDirection(_ point:CGPoint,_ direction:Direction) -> CGPoint
     
     func left(_ length:CGFloat) -> EasierPath
