@@ -120,6 +120,10 @@ it, simply add the following line to your Podfile:
 pod 'EasierPath'
 ```
 
+## Test Coverage
+
+> 100%
+
 ## Author
 
 Fomagran, fomagran6@naver.com
