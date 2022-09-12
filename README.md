@@ -4,7 +4,6 @@
 [![Version](https://img.shields.io/cocoapods/v/EasierPath.svg?style=flat)](https://cocoapods.org/pods/EasierPath)
 [![License](https://img.shields.io/cocoapods/l/EasierPath.svg?style=flat)](https://cocoapods.org/pods/EasierPath)
 [![Platform](https://img.shields.io/cocoapods/p/EasierPath.svg?style=flat)](https://cocoapods.org/pods/EasierPath)
-![Platform](https://img.shields.io/badge/Coverage-100%25-green)
 
 <img src="https://user-images.githubusercontent.com/47676921/171056957-309f97c1-c590-4b74-94e3-202641269d91.png"  width="600" height="300">
 
