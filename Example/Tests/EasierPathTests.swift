@@ -14,6 +14,11 @@ class EasierPathTests: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
     }
+    
+    func testEasierPath_WhenStart_ShouldReturnStartPoint() {
+        sut = EasierPath().start(0, 0)
+        XCTAssertEqual(sut.lastEndPoint,CGPoint(x: 0, y: 0))
+    }
 
     func testEasierPath_WhenLeftMove_ShouldChangeLastEndPointToLeftMovePoint() {
         sut = EasierPath(0,0)
