@@ -10,7 +10,7 @@ import UIKit
 import EasierPath
 
 class ViewController: UIViewController {
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         drawBeizerPath()
         drawEasierPath()
         drawEasierPathShape()
+        drawGradientLayer()
     }
     
     func setupUI() {
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     func drawEasierPath() {
-        let easierPath = EasierPath(100,300)
+        let easierPath = EasierPath(100,350)
             .right(100)
             .curve(to: .down(200), .bezier(.rightDown(50,50), .leftDown(25,150)))
             .left(100)
@@ -55,9 +56,21 @@ class ViewController: UIViewController {
     }
     
     func drawEasierPathShape() {
-        let easierPath:EasierPath = EasierPath(.rhombus, CGRect(x: 100, y: 500, width: 100, height: 200))
-        let layer = easierPath.makeLayer(lineWidth:3,lineColor: .white,fillColor:.systemGreen)
+        let shape = EasierPath(.square, CGRect())
+        let layer = shape.makeLayer(lineWidth:3,lineColor: .white,fillColor:.systemGreen)
+        
         view.layer.addSublayer(layer)
+    }
+    
+    func drawGradientLayer() {
+        let easierPath = EasierPath(100,600)
+            .right(100)
+            .curve(to: .down(200), .bezier(.rightDown(50,50), .leftDown(25,150)))
+            .left(100)
+            .curve(to:.up(200), .bezier(.rightUp(25,50), .leftUp(50,150)))
+        let gradientLayer = easierPath.makeGradientLayer(startPoint: CGPoint(x: 0.0, y: 0.5), endPoint: CGPoint(x: 1.0, y: 0.5), gradientColors: [UIColor.blue.cgColor,UIColor.red.cgColor])
+        
+        view.layer.addSublayer(gradientLayer)
     }
 }
 

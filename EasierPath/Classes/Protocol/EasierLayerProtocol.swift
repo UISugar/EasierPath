@@ -16,5 +16,7 @@ protocol EasierLayerProtocol {
     //MARK: Functions
     
     func setStyle(lineWidth:CGFloat,lineColor:UIColor,fillColor:UIColor) -> CAShapeLayer
+    
+    func setGradientStyle(startPoint: CGPoint,endPoint: CGPoint,gradientColors: [CGColor]) -> CAGradientLayer
 }
 

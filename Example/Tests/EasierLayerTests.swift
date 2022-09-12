@@ -30,5 +30,14 @@ class EasierLayerTests: XCTestCase {
         XCTAssertEqual(layer.strokeColor,UIColor.black.cgColor)
         XCTAssertEqual(layer.fillColor,UIColor.blue.cgColor)
     }
+    
+    func testEasierPath_WhenSetGradientStyle_ShouldReturnChangedGradientStyleLayer() {
+
+        let gradientLayer = sut.setGradientStyle(startPoint: CGPoint(x: 0.5, y: 1.0), endPoint: CGPoint(x: 1.0, y: 1.0), gradientColors: [UIColor.blue.cgColor,UIColor.red.cgColor])
+        
+        XCTAssertEqual(gradientLayer.startPoint,CGPoint(x: 0.5, y: 1.0))
+        XCTAssertEqual(gradientLayer.endPoint,CGPoint(x: 1.0, y: 1.0))
+        XCTAssertEqual(gradientLayer.colors as! [CGColor],[UIColor.blue.cgColor,UIColor.red.cgColor])
+    }
 
 }
