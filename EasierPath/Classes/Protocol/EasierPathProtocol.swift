@@ -41,5 +41,7 @@ protocol EasierPathProtocol {
     
     func makeLayer(lineWidth:CGFloat,lineColor:UIColor,fillColor:UIColor) -> CAShapeLayer
     
+    func makeGradientLayer(startPoint: CGPoint,endPoint: CGPoint,gradientColors: [CGColor]) -> CAGradientLayer
+    
     func addLine(_ x:CGFloat,_ y:CGFloat) -> EasierPath
 }

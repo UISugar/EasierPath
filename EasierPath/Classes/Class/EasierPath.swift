@@ -8,7 +8,6 @@
 import UIKit
 
 public class EasierPath:EasierPathProtocol {
-
     public var lastEndPoint:CGPoint
     public var path:UIBezierPath
     internal var layer:CAShapeLayer = CAShapeLayer()
@@ -98,9 +97,16 @@ public class EasierPath:EasierPathProtocol {
     }
     
     public func makeLayer(lineWidth:CGFloat,lineColor:UIColor,fillColor:UIColor) -> CAShapeLayer {
-        let layer = EasierLayer()
-        layer.layer.path = self.path.cgPath
-        return layer.setStyle(lineWidth: lineWidth, lineColor: lineColor, fillColor: fillColor)
+        let easierLayer = EasierLayer()
+        easierLayer.layer.path = self.path.cgPath
+        return easierLayer.setStyle(lineWidth: lineWidth, lineColor: lineColor, fillColor: fillColor)
+    }
+    
+    public func makeGradientLayer(startPoint: CGPoint, endPoint: CGPoint, gradientColors: [CGColor]) -> CAGradientLayer {
+        let easierLayer = EasierLayer()
+        easierLayer.layer.path = self.path.cgPath
+        easierLayer.gradientLayer.mask = easierLayer.layer
+        return easierLayer.setGradientStyle(startPoint: startPoint, endPoint: endPoint, gradientColors: gradientColors)
     }
     
     static internal func drawByShape(_ shape:Shape,_ rect:CGRect) -> UIBezierPath {

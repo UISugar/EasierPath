@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasierPath'
-  s.version          = '1.0.1'
+  s.version          = '1.1.0'
   s.summary          = 'To make it easier to use UIBezierPath ⚡️'
 
 
@@ -25,5 +25,5 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'EasierPath/Classes/**/*'
   
-  s.swift_versions = '5.4'
+  s.swift_versions = '5.0'
 end
