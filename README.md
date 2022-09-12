@@ -112,7 +112,7 @@ square | circle  | rectangle | oval | triangle | rhombus
 :-------:|:-------:|:-------:|:-------:|:-------:|:-------:
 ![스크린샷 2022-06-12 오후 5 43 43](https://user-images.githubusercontent.com/47676921/173256519-0a70df62-be59-4897-8428-ff6e0d6e0aa6.png) | ![스크린샷 2022-06-12 오후 5 38 54](https://user-images.githubusercontent.com/47676921/173256447-6e1872dc-523d-46da-9d95-5ba1dd76d492.png)  | ![스크린샷 2022-06-12 오후 5 39 29](https://user-images.githubusercontent.com/47676921/173256449-dce242a5-e239-4801-9e38-ff180786d277.png) | ![스크린샷 2022-06-12 오후 5 39 15](https://user-images.githubusercontent.com/47676921/173256448-991ad589-f2eb-4738-b656-16c782a96d8c.png) | ![스크린샷 2022-06-12 오후 5 39 50](https://user-images.githubusercontent.com/47676921/173256452-903e0d8c-c9b5-4ac5-a046-89b87cb62d69.png) | ![스크린샷 2022-06-12 오후 5 38 36](https://user-images.githubusercontent.com/47676921/173256446-373decb9-a51d-4338-a727-c761df70452f.png)
 
-# Easy to fill gradient colors to UIBezierPath 🌈
+# Easily fill gradient colors within EasierPath 🌈
 
 ```swift
     let easierPath = EasierPath(100,600)
